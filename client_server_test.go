@@ -17,7 +17,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"net/http"
 	"net/http/cookiejar"
 	"net/http/httptest"
 	"net/http/httptrace"
@@ -26,6 +25,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 var cstUpgrader = Upgrader{

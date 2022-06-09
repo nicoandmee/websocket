@@ -11,7 +11,8 @@ import (
 	"flag"
 	"html/template"
 	"log"
-	"net/http"
+
+	http "github.com/Carcraftz/fhttp"
 
 	"github.com/gorilla/websocket"
 )

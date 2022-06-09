@@ -7,8 +7,9 @@ package main
 import (
 	"bytes"
 	"log"
-	"net/http"
 	"time"
+
+	http "github.com/Carcraftz/fhttp"
 
 	"github.com/gorilla/websocket"
 )

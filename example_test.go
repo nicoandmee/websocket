@@ -6,8 +6,9 @@ package websocket_test
 
 import (
 	"log"
-	"net/http"
 	"testing"
+
+	http "github.com/Carcraftz/fhttp"
 
 	"github.com/gorilla/websocket"
 )

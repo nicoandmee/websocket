@@ -5,9 +5,10 @@
 package websocket
 
 import (
-	"net/http"
 	"reflect"
 	"testing"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 var equalASCIIFoldTests = []struct {

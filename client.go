@@ -12,11 +12,12 @@ import (
 	"io"
 	"io/ioutil"
 	"net"
-	"net/http"
 	"net/http/httptrace"
 	"net/url"
 	"strings"
 	"time"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 // ErrBadHandshake is returned when the server response to opening handshake is

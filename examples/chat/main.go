@@ -7,7 +7,8 @@ package main
 import (
 	"flag"
 	"log"
-	"net/http"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 var addr = flag.String("addr", ":8080", "http service address")

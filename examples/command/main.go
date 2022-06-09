@@ -9,10 +9,11 @@ import (
 	"flag"
 	"io"
 	"log"
-	"net/http"
 	"os"
 	"os/exec"
 	"time"
+
+	http "github.com/Carcraftz/fhttp"
 
 	"github.com/gorilla/websocket"
 )

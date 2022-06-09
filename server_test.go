@@ -8,10 +8,11 @@ import (
 	"bufio"
 	"bytes"
 	"net"
-	"net/http"
 	"reflect"
 	"strings"
 	"testing"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 var subprotocolTests = []struct {

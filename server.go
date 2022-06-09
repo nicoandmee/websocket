@@ -8,10 +8,11 @@ import (
 	"bufio"
 	"errors"
 	"io"
-	"net/http"
 	"net/url"
 	"strings"
 	"time"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 // HandshakeError describes an error with the handshake from the peer.

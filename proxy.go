@@ -9,9 +9,10 @@ import (
 	"encoding/base64"
 	"errors"
 	"net"
-	"net/http"
 	"net/url"
 	"strings"
+
+	http "github.com/Carcraftz/fhttp"
 )
 
 type netDialerFunc func(network, addr string) (net.Conn, error)
