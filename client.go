@@ -7,17 +7,18 @@ package websocket
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
 	"errors"
 	"io"
 	"io/ioutil"
 	"net"
-	"net/http/httptrace"
 	"net/url"
 	"strings"
 	"time"
 
+	tls "github.com/Carcraftz/utls"
+
 	http "github.com/Carcraftz/fhttp"
+	httptrace "github.com/Carcraftz/fhttp/httptrace"
 )
 
 // ErrBadHandshake is returned when the server response to opening handshake is
@@ -341,13 +342,16 @@ func (d *Dialer) DialContext(ctx context.Context, urlStr string, requestHeader h
 		if cfg.ServerName == "" {
 			cfg.ServerName = hostNoPort
 		}
-		tlsConn := tls.Client(netConn, cfg)
+		cfg.InsecureSkipVerify = true
+		// tlsConn := tls.Client(netConn, cfg)
+		tlsConn := tls.UClient(netConn, cfg, tls.HelloChrome_Auto)
 		netConn = tlsConn
 
 		if trace != nil && trace.TLSHandshakeStart != nil {
 			trace.TLSHandshakeStart()
 		}
 		err := doHandshake(ctx, tlsConn, cfg)
+
 		if trace != nil && trace.TLSHandshakeDone != nil {
 			trace.TLSHandshakeDone(tlsConn.ConnectionState(), err)
 		}

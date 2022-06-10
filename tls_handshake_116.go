@@ -5,7 +5,7 @@ package websocket
 
 import (
 	"context"
-	"crypto/tls"
+	tls "github.com/Carcraftz/utls"
 )
 
 func doHandshake(ctx context.Context, tlsConn *tls.Conn, cfg *tls.Config) error {

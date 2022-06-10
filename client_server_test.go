@@ -7,7 +7,6 @@ package websocket
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
 	"crypto/x509"
 	"encoding/base64"
 	"encoding/binary"
@@ -19,12 +18,15 @@ import (
 	"net"
 	"net/http/cookiejar"
 	"net/http/httptest"
-	"net/http/httptrace"
 	"net/url"
 	"reflect"
 	"strings"
 	"testing"
 	"time"
+
+	httptrace "github.com/Carcraftz/fhttp/httptrace"
+
+	tls "github.com/Carcraftz/utls"
 
 	http "github.com/Carcraftz/fhttp"
 )

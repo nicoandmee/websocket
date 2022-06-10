@@ -5,11 +5,12 @@ package websocket
 
 import (
 	"context"
-	"crypto/tls"
+
+	tls "github.com/Carcraftz/utls"
 )
 
-func doHandshake(ctx context.Context, tlsConn *tls.Conn, cfg *tls.Config) error {
-	if err := tlsConn.HandshakeContext(ctx); err != nil {
+func doHandshake(ctx context.Context, tlsConn *tls.UConn, cfg *tls.Config) error {
+	if err := tlsConn.Handshake(); err != nil {
 		return err
 	}
 	if !cfg.InsecureSkipVerify {
